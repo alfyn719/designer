@@ -1,0 +1,12 @@
+{
+  "name": "layout-designer",
+  "version": "1.0.0",
+  "description": "create a layout scaffold",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["css-grid", "layout designer"],
+  "author": "alfyn719 <zyk1191894890@gmail.com> (https://github.com/alfyn719)",
+  "license": "ISC"
+}
