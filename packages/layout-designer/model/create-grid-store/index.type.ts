@@ -1,27 +1,38 @@
 import createGridStore from "./index.ts";
 
+import type { ExplicitUnitValue } from "./unit.type.ts";
+
 type GridStore = ReturnType<typeof createGridStore>;
 
 /**
- * 容器属性：
- * 1.display: grid;
- * 2.gutter: column-gap, row-gap; -- 表单
- * 3.explicit:
- *  grid-template-rows 自增表单
- *  grid-template-columns 自增表单
- *  grid-template-areas 根据 grid-template-rows 和 grid-template-columns 生成表单
  *
- * 元素属性：
- * 1.grid-area:
- *
- * 使用命名的网格区域方案
- *
- * 单位：fr, px, %, em, auto, min-content, max-content, minmax()
  */
+type GridRowStart = number;
+type GridColumnStart = number;
+type GridRowEnd = number;
+type GridColumnEnd = number;
+
+type GridArea = [GridRowStart, GridColumnStart, GridRowEnd, GridColumnEnd];
+
+type GridAreaName = string;
+
+type GridLayout = Record<GridAreaName, GridArea>;
 
 interface GridProps {
+  // gutter
+  rowUnit: ExplicitUnitValue;
+  columnUnit: ExplicitUnitValue;
   rowGap: string;
   columnGap: string;
+
+  // split
+  gridTemplateRows: string[];
+  gridTemplateColumns: string[];
+
+  // layout
+  gridLayout: GridLayout;
+
+  // alignment
 }
 
 interface GridState extends GridProps {}
