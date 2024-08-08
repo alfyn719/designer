@@ -1,4 +1,4 @@
-import * as pipelineToolkit from "./pipeline.ts";
-import * as prototype from "./prototype.ts";
+import * as pipelineToolkit from './pipeline.ts'
+import * as prototype from './prototype.ts'
 
-export { pipelineToolkit, prototype };
+export { pipelineToolkit, prototype }

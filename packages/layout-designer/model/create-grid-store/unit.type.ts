@@ -3,32 +3,32 @@
  */
 
 enum ExplicitUnit {
-  Pixel = "px",
-  Percent = "%",
-  EM = "em",
+  Pixel = 'px',
+  Percent = '%',
+  EM = 'em',
 }
 
-type ExplicitUnitKey = keyof typeof ExplicitUnit;
-type ExplicitUnitValue = `${ExplicitUnit}`;
+type ExplicitUnitKey = keyof typeof ExplicitUnit
+type ExplicitUnitValue = `${ExplicitUnit}`
 
 enum Track {
-  Pixel = "px",
-  Percent = "%",
-  EM = "em",
-  Fraction = "fr",
-  Auto = "auto",
-  MinContent = "min-content",
-  MaxContent = "max-content",
-  Minmax = "minmax",
+  Pixel = 'px',
+  Percent = '%',
+  EM = 'em',
+  Fraction = 'fr',
+  Auto = 'auto',
+  MinContent = 'min-content',
+  MaxContent = 'max-content',
+  Minmax = 'minmax',
 }
 
-type TrackKey = keyof typeof Track;
-type TrackValue = `${Track}`;
+type TrackKey = keyof typeof Track
+type TrackValue = `${Track}`
 
 // ======= export split line =======
 
-export type { ExplicitUnitKey, ExplicitUnitValue };
-export { ExplicitUnit };
+export type { ExplicitUnitKey, ExplicitUnitValue }
+export { ExplicitUnit }
 
-export type { TrackKey, TrackValue };
-export { Track };
+export type { TrackKey, TrackValue }
+export { Track }

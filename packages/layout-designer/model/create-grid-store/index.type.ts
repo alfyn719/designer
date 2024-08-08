@@ -1,40 +1,90 @@
-import createGridStore from "./index.ts";
+import type { AlignmentValue } from './alignment.type.ts'
+import type {
+  GapTypeKey,
+  GridTemplateTypeKey,
+  SplitDirectionKey,
+} from './helper.type.ts'
+import type createGridStore from './index.ts'
+import type { ExplicitUnitValue } from './unit.type.ts'
 
-import type { ExplicitUnitValue } from "./unit.type.ts";
-
-type GridStore = ReturnType<typeof createGridStore>;
+// ======= grid area =======
 
 /**
- *
+ * use grid lines to pick grid area
  */
-type GridRowStart = number;
-type GridColumnStart = number;
-type GridRowEnd = number;
-type GridColumnEnd = number;
+type GridRowStart = number
+type GridColumnStart = number
+type GridRowEnd = number
+type GridColumnEnd = number
+type GridArea = [GridRowStart, GridColumnStart, GridRowEnd, GridColumnEnd]
 
-type GridArea = [GridRowStart, GridColumnStart, GridRowEnd, GridColumnEnd];
+/**
+ * named grid area to improve legible
+ */
+type AreaName = string
+type NamedArea = Record<AreaName, GridArea>
 
-type GridAreaName = string;
-
-type GridLayout = Record<GridAreaName, GridArea>;
+// ======= grid store props =======
 
 interface GridProps {
   // gutter
-  rowUnit: ExplicitUnitValue;
-  columnUnit: ExplicitUnitValue;
-  rowGap: string;
-  columnGap: string;
+  rowUnit: ExplicitUnitValue
+  columnUnit: ExplicitUnitValue
+  rowGap: number
+  columnGap: number
+
+  // alignment to container on tracks
+  justifyContent: AlignmentValue
+  alignContent: AlignmentValue
+
+  // alignment to container on area's elements
+  justifyItems: AlignmentValue
+  alignItems: AlignmentValue
 
   // split
-  gridTemplateRows: string[];
-  gridTemplateColumns: string[];
+  gridTemplateRows: string[]
+  gridTemplateColumns: string[]
 
-  // layout
-  gridLayout: GridLayout;
+  layout: NamedArea
 
-  // alignment
+  // ======= helper =======
+
+  selectedTracks: {
+    row: number[]
+    column: number[]
+  }
 }
 
-interface GridState extends GridProps {}
+interface GridState extends GridProps {
+  // row / column
+  readonly splitGrid: (
+    type: GridTemplateTypeKey,
+    index: number,
 
-export type { GridProps, GridState, GridStore };
+    // TODO for animation
+    direction?: SplitDirectionKey,
+  ) => void
+
+  readonly deleteTrack: (type: GridTemplateTypeKey, index: number) => void
+
+  readonly moveTrack: (
+    type: GridTemplateTypeKey,
+    from: number,
+    to: number,
+  ) => void
+
+  readonly editTrack: (
+    type: GridTemplateTypeKey,
+    index: number,
+    length: string,
+  ) => void
+
+  // gutter
+  readonly editGap: (type: GapTypeKey, length: number) => void
+
+  // layout
+}
+
+type GridStore = ReturnType<typeof createGridStore>
+
+export type { GridArea, GridProps, GridState, GridStore }

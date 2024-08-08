@@ -1,7 +1,7 @@
-import LayoutDesigner from "@designer/layout-designer";
+import LayoutDesigner from '@designer/layout-designer'
 
 const App = () => {
-  return <LayoutDesigner />;
-};
+  return <LayoutDesigner />
+}
 
-export default App;
+export default App
