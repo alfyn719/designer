@@ -3,6 +3,7 @@ import type {
   GapTypeKey,
   GridTemplateTypeKey,
   SplitDirectionKey,
+  SplitDirectionValue,
 } from './helper.type.ts'
 import type createGridStore from './index.ts'
 import type { ExplicitUnitValue } from './unit.type.ts'
@@ -75,7 +76,7 @@ interface GridState extends GridProps, GridComputed {
     index: number,
 
     // TODO for animation
-    direction?: SplitDirectionKey,
+    direction?: SplitDirectionValue,
   ) => void
 
   readonly deleteTrack: (type: GridTemplateTypeKey, index: number) => void

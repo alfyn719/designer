@@ -7,6 +7,15 @@
 - [ ] UI 模型编写
 - [ ] 总结和文档输出
 
+### 功能设计 -20240812
+
+0808 设计的功能删除
+删除轨道交互，仅用于交互提示
+切分交互放到 tab 上
+
+
+### 功能设计 -20240808
+
 Grid layout features：
 
 1. grid's **track** design：counts, width / height；

@@ -1,0 +1,29 @@
+.tabs {
+  display: grid;
+
+  .tab {
+    width: 100%;
+    height: 100%;
+    background: aliceblue;
+  }
+
+  &.column {
+    grid-template-columns: var(--columns);
+    column-gap: var(--column-gap);
+
+    .tab {
+      border-radius: 10px 10px 0 0;
+      border-bottom: 1px solid #fff;
+    }
+  }
+
+  &.row {
+    grid-template-rows: var(--rows);
+    row-gap: var(--row-gap);
+
+    .tab {
+      border-radius: 10px 0 0 10px;
+      border-right: 1px solid #fff;
+    }
+  }
+}

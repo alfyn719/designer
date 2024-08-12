@@ -9,8 +9,12 @@ type GridTemplateTypeKey = keyof typeof GridTemplateType
 type GridTemplateTypeValue = `${GridTemplateType}`
 
 enum SplitDirection {
-  Left,
-  Right,
+  Top = 'top',
+  RowCenter = 'rowCenter',
+  Bottom = 'bottom',
+  Left = 'left',
+  ColumnCenter = 'columnCenter',
+  Right = 'right',
 }
 
 type SplitDirectionKey = keyof typeof SplitDirection

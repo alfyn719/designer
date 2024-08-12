@@ -1,24 +1,20 @@
 import styles from './index.module.less'
 import useGridContext from '../../hooks/use-grid-context.ts'
-import Area from '../Area'
-import Track from '../Track'
-import Unit from '../Unit'
+import Tab from '../Tab'
+import Workspace from '../Workspace'
 
-const Index = () => {
-  const colors = useGridContext(state => state.colors)
+const GridLayout = () => {
   const cssVariable = useGridContext(state => state.cssVariable())
-
-  const units = useGridContext(state => state.units())
-  const areas = useGridContext(state => state.sortedArea())
-  const [rowTrack, columnTrack] = useGridContext(state => state.trackGridArea())
+  const columnCount = useGridContext(state => state.gridTemplateColumns.length)
+  const rowCount = useGridContext(state => state.gridTemplateRows.length)
 
   return (
-    <div className={styles.gridLayout} style={cssVariable}>
-      <Unit units={units} />
-      <Area className={styles.area} areas={areas} colors={colors} />
-      <Track className={styles.track} rowTrack={rowTrack} columnTrack={columnTrack} />
+    <div className={styles.gridWorkspace} style={cssVariable}>
+      <Tab className={styles.rowTab} type="Row" count={rowCount} />
+      <Tab className={styles.columnTab} type="Column" count={columnCount} />
+      <Workspace className={styles.workspace} />
     </div>
   )
 }
 
-export default Index
+export default GridLayout

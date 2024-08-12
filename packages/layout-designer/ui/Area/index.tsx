@@ -6,7 +6,6 @@ import cls from 'classnames'
 import styles from './index.module.less'
 
 interface IAreaProps {
-  className: string
   areas: NamedAreaArr
   colors: string[]
 }

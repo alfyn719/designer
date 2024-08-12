@@ -4,12 +4,11 @@ import type { FC } from 'react'
 import styles from './index.module.less'
 
 interface ITrackProps {
-  className: string
   rowTrack: GridArea[]
   columnTrack: GridArea[]
 }
 
-// TODO track 切分和删除动效
+// TODO track 切分和删除动效，虽然操作不在 track 上，但动效体验可以放在 track 上
 
 const Index: FC<ITrackProps> = (props) => {
   const { rowTrack, columnTrack } = props
