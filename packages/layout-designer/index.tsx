@@ -1,4 +1,4 @@
-import GridLayout from './ui/GridLayout.tsx'
+import GridLayout from './ui/GridLayout'
 import GridProvider from './ui/GridProvider.tsx'
 
 const LayoutDesigner = () => {

@@ -6,6 +6,7 @@ import type {
 } from './helper.type.ts'
 import type createGridStore from './index.ts'
 import type { ExplicitUnitValue } from './unit.type.ts'
+import type { CSSProperties } from 'react'
 
 // ======= grid area =======
 
@@ -23,6 +24,7 @@ type GridArea = [GridRowStart, GridColumnStart, GridRowEnd, GridColumnEnd]
  */
 type AreaName = string
 type NamedArea = Record<AreaName, GridArea>
+type NamedAreaArr = [AreaName, GridArea][]
 
 // ======= grid store props =======
 
@@ -49,13 +51,24 @@ interface GridProps {
 
   // ======= helper =======
 
+  areaOrder: AreaName[]
+
   selectedTracks: {
     row: number[]
     column: number[]
   }
+
+  colors: string[]
 }
 
-interface GridState extends GridProps {
+interface GridComputed {
+  readonly cssVariable: () => CSSProperties
+  readonly units: () => GridArea[]
+  readonly trackGridArea: () => [GridArea[], GridArea[]]
+  readonly sortedArea: () => NamedAreaArr
+}
+
+interface GridState extends GridProps, GridComputed {
   // row / column
   readonly splitGrid: (
     type: GridTemplateTypeKey,
@@ -83,8 +96,9 @@ interface GridState extends GridProps {
   readonly editGap: (type: GapTypeKey, length: number) => void
 
   // layout
+  readonly addArea: () => void
 }
 
 type GridStore = ReturnType<typeof createGridStore>
 
-export type { GridArea, GridProps, GridState, GridStore }
+export type { GridArea, NamedArea, NamedAreaArr, GridProps, GridState, GridStore }

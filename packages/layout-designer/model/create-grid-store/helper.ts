@@ -97,15 +97,15 @@ const splitStrategy = function self(unitValue: UnitValue) {
 
 const split = pipelineCurrying<string[]>([splitStrategy, splitValue])
 
-// ======= generateTrackArea =======
+// ======= track area =======
 
-interface IGenerateTrackArea {
+interface INumberedTrackProps {
   rowLineCount: number
   columnLineCount: number
 }
 
-// numbered lines to numbered track
-const numberedTrack = (gridLines: IGenerateTrackArea) => {
+// line's count to numbered track
+const numberedTrack = (gridLines: INumberedTrackProps) => {
   const { rowLineCount, columnLineCount } = gridLines
 
   const rowTracks: GridArea[] = []
@@ -134,8 +134,42 @@ const bodyCombine = <T>(arr: [T[], T[]]) => {
 }
 
 const trackArea = pipelineCurrying<[GridArea[], GridArea[]]>([
-  bodyCombine<GridArea>,
   numberedTrack,
 ])
 
-export { split, trackArea }
+// ======= unit area =======
+
+interface INumberedUnitProps extends INumberedTrackProps {
+  startRowGridLineNo?: number
+  startColumnGridLineNo?: number
+}
+
+// line's count to numbered unit
+const numberedUnit = (gridLines: INumberedUnitProps) => {
+  const {
+    rowLineCount,
+    columnLineCount,
+    startRowGridLineNo = 1,
+    startColumnGridLineNo = 1,
+  } = gridLines
+
+  const unit: GridArea[] = []
+
+  for (let i = startRowGridLineNo; i < rowLineCount; i++) {
+    const rowStart = i
+    const rowEnd = i + 1
+
+    for (let j = startColumnGridLineNo; j < columnLineCount; j++) {
+      const columnStart = j
+      const columnEnd = j + 1
+
+      unit.push([rowStart, columnStart, rowEnd, columnEnd])
+    }
+  }
+
+  return unit
+}
+
+const unitArea = numberedUnit
+
+export { split, trackArea, unitArea }
