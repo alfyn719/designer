@@ -19,7 +19,7 @@ export default antfu({
 
     'antfu/top-level-function': 'off',
 
-    'unused-imports/no-unused-imports': 'off',
-    'unused-imports/no-unused-vars': 'warn',
+    // 'unused-imports/no-unused-imports': 'off',
+    // 'unused-imports/no-unused-vars': 'warn',
   },
 })
