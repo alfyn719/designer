@@ -172,4 +172,8 @@ const numberedUnit = (gridLines: INumberedUnitProps) => {
 
 const unitArea = numberedUnit
 
-export { split, trackArea, unitArea }
+// ======= utils =======
+
+const toFixed = (n: number, precision: number): number => Number(n.toFixed(precision))
+
+export { split, trackArea, unitArea, toFixed }

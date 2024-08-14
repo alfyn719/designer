@@ -1,4 +1,4 @@
-import type { GridProps, GridState } from './index.type.ts'
+import type { GridProps, GridPropsPrivate, GridState } from './index.type.ts'
 import type { CSSProperties } from 'react'
 
 import Color from 'color'
@@ -24,7 +24,7 @@ const colors = [
   '#ffd6e7',
 ].map(color => Color(color).fade(0.6).hexa())
 
-const DEFAULT_PROPS: GridProps = {
+const DEFAULT_PROPS: GridProps & GridPropsPrivate = {
   rowUnit: 'px',
   columnUnit: 'px',
   rowGap: 5,
@@ -41,7 +41,7 @@ const DEFAULT_PROPS: GridProps = {
 
   layout: {
     area1: [2, 1, 3, 3],
-    area2: [1, 1, 3, 3],
+    area2: [2, 2, 4, 4],
     area3: [3, 2, 4, 4],
   },
 
@@ -55,6 +55,18 @@ const DEFAULT_PROPS: GridProps = {
   },
 
   colors,
+
+  // ======= private =======
+  _workspaceRect: {},
+
+  _selectRect: {
+    x: 0,
+    y: 0,
+    top: 0,
+    left: 0,
+    width: 0,
+    height: 0,
+  },
 }
 
 const createGridStore = (initProps: Partial<GridProps>) =>
@@ -158,6 +170,19 @@ const createGridStore = (initProps: Partial<GridProps>) =>
           })
         },
 
+        // ======= action private =======
+
+        _setSelectRect(selecto) {
+          set((state) => {
+            state._selectRect = selecto
+          })
+        },
+
+        _setWorkspaceRect(rect) {
+          set((state) => {
+            state._workspaceRect = rect
+          })
+        },
       })),
     ),
   )

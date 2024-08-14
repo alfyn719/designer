@@ -11,14 +11,14 @@ import { NO_HOVER_TAB_INDEX, OUT_TAB_XY, THRESHOLD, mouseXY2Direction, pickDirec
 import styles from './index.module.less'
 import useGridContext from '../../hooks/use-grid-context.ts'
 
+// 分割、删除、track 移动、尺寸调整
+// TODO 键盘分割，tab 选中标签
+
 interface ITabProps {
   className?: string
   type: GridTemplateTypeKey
   count: number
 }
-
-// 分割、删除、track 移动、尺寸调整
-// TODO 键盘分割，tab 选中标签
 
 const Tab: FC<ITabProps> = (props) => {
   const {
@@ -77,8 +77,6 @@ const Tab: FC<ITabProps> = (props) => {
                 uMouseXY(OUT_TAB_XY)
               }}
               onDoubleClick={() => {
-                console.log('xxx', 'split', type, index, direction)
-
                 if (!direction) {
                   return
                 }

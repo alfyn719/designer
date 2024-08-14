@@ -8,6 +8,7 @@ import type {
 import type createGridStore from './index.ts'
 import type { ExplicitUnitValue } from './unit.type.ts'
 import type { CSSProperties } from 'react'
+import type { RectReadOnly } from 'react-use-measure'
 
 // ======= grid area =======
 
@@ -26,6 +27,17 @@ type GridArea = [GridRowStart, GridColumnStart, GridRowEnd, GridColumnEnd]
 type AreaName = string
 type NamedArea = Record<AreaName, GridArea>
 type NamedAreaArr = [AreaName, GridArea][]
+
+// ======= private =======
+
+interface SelectRect {
+  x: number
+  y: number
+  left: number
+  top: number
+  width: number
+  height: number
+}
 
 // ======= grid store props =======
 
@@ -69,7 +81,13 @@ interface GridComputed {
   readonly sortedArea: () => NamedAreaArr
 }
 
-interface GridState extends GridProps, GridComputed {
+interface GridPropsPrivate {
+  _workspaceRect: Partial<RectReadOnly>
+  _selectRect: SelectRect
+
+}
+
+interface GridAction {
   // row / column
   readonly splitGrid: (
     type: GridTemplateTypeKey,
@@ -100,6 +118,22 @@ interface GridState extends GridProps, GridComputed {
   readonly addArea: () => void
 }
 
+interface GridActionPrivate {
+  readonly _setSelectRect: (selecto: SelectRect) => void
+  readonly _setWorkspaceRect: (rect: RectReadOnly) => void
+}
+
+interface GridState extends
+  GridProps, GridComputed, GridPropsPrivate, GridAction, GridActionPrivate {}
+
 type GridStore = ReturnType<typeof createGridStore>
 
-export type { GridArea, NamedArea, NamedAreaArr, GridProps, GridState, GridStore }
+export type {
+  GridArea,
+  NamedArea,
+  NamedAreaArr,
+  GridProps,
+  GridPropsPrivate,
+  GridState,
+  GridStore,
+}
