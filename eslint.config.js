@@ -21,5 +21,6 @@ export default antfu({
 
     // 'unused-imports/no-unused-imports': 'off',
     // 'unused-imports/no-unused-vars': 'warn',
+    'react-hooks/exhaustive-deps': 'off',
   },
 })

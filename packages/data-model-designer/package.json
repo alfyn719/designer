@@ -1,0 +1,19 @@
+{
+  "name": "@designer/data-model-designer",
+  "version": "1.0.0",
+  "description": "create a data model",
+  "author": "alfyn719 <zyk1191894890@gmail.com> (https://github.com/alfyn719)",
+  "license": "ISC",
+  "keywords": [
+    "data model",
+    "data model designer"
+  ],
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "immer": "^10.1.1",
+    "zustand": "^4.5.4"
+  }
+}

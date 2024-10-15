@@ -1,0 +1,21 @@
+{
+  "name": "@designer/data-source-designer",
+  "version": "1.0.0",
+  "description": "create a data source",
+  "author": "alfyn719 <zyk1191894890@gmail.com> (https://github.com/alfyn719)",
+  "license": "ISC",
+  "keywords": [
+    "data source",
+    "data source designer"
+  ],
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "@ant-design/icons": "^5.5.1",
+    "antd": "^5.21.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
