@@ -1,0 +1,14 @@
+{
+  "name": "@designer/scheduler",
+  "version": "1.0.0",
+  "description": "Scheduler for Designer",
+  "author": "alfyn719 <zyk1191894890@gmail.com> (https://github.com/alfyn719)",
+  "license": "ISC",
+  "keywords": [
+    "scheduler"
+  ],
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

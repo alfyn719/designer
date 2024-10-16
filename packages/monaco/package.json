@@ -1,0 +1,19 @@
+{
+  "name": "@designer/monaco",
+  "version": "1.0.0",
+  "description": "monaco editor",
+  "author": "alfyn719 <zyk1191894890@gmail.com> (https://github.com/alfyn719)",
+  "license": "ISC",
+  "keywords": [
+    "monaco",
+    "monaco editor"
+  ],
+  "main": "index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "@monaco-editor/react": "^4.6.0",
+    "monaco-editor": "^0.52.0"
+  }
+}

@@ -4,13 +4,13 @@ interface ApiConfig {
   source: {
     name: string
 
-    // 通过 api 获取数据
-    type: 'api'
-
     // 数据结构描述
     structure: {
       [dataName: string]: string
     }
+
+    // 通过 api 获取数据
+    type: 'api'
   }
 
   api: {
@@ -38,7 +38,7 @@ interface ApiConfig {
 
         // 是否需要刷新
         needRefresh: boolean
-        refreshWho: string[]
+        refreshWho?: string[]
       }
     }[]
   }

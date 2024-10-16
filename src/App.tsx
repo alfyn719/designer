@@ -1,5 +1,6 @@
 import storeDemo, { switcher } from '@designer/data-model-designer'
 import DataSourceForm from '@designer/data-source-designer'
+import MonacoEditor from '@designer/monaco'
 import { useStore } from 'zustand'
 
 const xxx = switcher(false)
@@ -43,6 +44,13 @@ const App = () => {
       </div>
 
       <DataSourceForm />
+
+      <MonacoEditor
+        value=""
+        onChange={(value) => {
+          console.log('value', value)
+        }}
+      />
     </div>
   )
 }

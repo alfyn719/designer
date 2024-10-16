@@ -18,6 +18,7 @@
     "@designer/data-model-designer": "workspace:packages",
     "@designer/data-source-designer": "workspace:packages",
     "@designer/layout-designer": "workspace:packages",
+    "@designer/monaco": "workspace:packages",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "zustand": "^4.5.4"
