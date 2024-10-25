@@ -33,6 +33,7 @@
     "html",
     "markdown",
     "json",
+    "json5",
     "jsonc",
     "yaml",
     "toml",
@@ -45,11 +46,5 @@
     "scss",
     "pcss",
     "postcss"
-  ],
-  "cSpell.words": [
-    "alfyn",
-    "antd",
-    "immer",
-    "zustand"
   ]
 }
