@@ -1,0 +1,5 @@
+root = true
+
+[{src/**.ts,src/**.tsx,designer/**.ts,designer/**.tsx,packages/**.ts,packages/**.tsx}]
+indent_style = space
+indent_size = 2

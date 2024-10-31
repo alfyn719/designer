@@ -1,61 +1,6 @@
-type Action = (...args: any[]) => any
+import type { Action, DeepAction, MixedAction } from './actions.type'
 
-type Source = string
-type Target = string
-
-type RouteKey = [Source] | [Source, Target]
-
-type DeepAction = [RouteKey, MixedAction[]]
-
-type MixedAction = Action | DeepAction
-
-// 1st library, just sniff mode
-function isDeep(mode: any): mode is DeepAction {
-  try {
-    return typeof mode[0][0] === 'string'
-  }
-  catch (e) {
-    return false
-  }
-}
-
-// ======= execute action recursion =======
-
-/**
- * the control for action drill
- * @param action DeepAction
- * @param init any
- */
-
-function drill(action: DeepAction, init: any): any {
-  const [[source, target = source], actions] = action as DeepAction
-
-  // eslint-disable-next-line ts/no-use-before-define
-  init[target] = pipeline(actions, init[source])
-
-  return init
-}
-
-/**
- * execute action on source or source's property further
- * @param actions use the actions reversely
- * @param init any
- */
-
-const pipeline = function self<T>(actions: MixedAction[], init: any): T {
-  if (!Array.isArray(actions))
-    throw new TypeError('recursionAction: actions must be an array')
-
-  if (actions.length === 0)
-    return init
-
-  const [action, ...restActions] = actions
-
-  if (isDeep(action))
-    return drill(action, self(restActions, init))
-
-  return action(self(restActions, init))
-}
+import { isDeep } from './helper'
 
 // ======= async execute action recursion =======
 
@@ -130,13 +75,6 @@ const asyncPipeline = async function self<T>(
   return await action(await self(restActions, init))
 }
 
-// ======= Currying =======
-
-function pipelineCurrying<T>(actions: MixedAction[]) {
-  return (init: any) =>
-    pipeline<T>(actions, init)
-}
-
 // ======= dev tools =======
 
 const deepReverse = function self(actions: MixedAction[]): MixedAction[] {
@@ -153,26 +91,9 @@ const deepReverse = function self(actions: MixedAction[]): MixedAction[] {
     .toReversed()
 }
 
-// ======= debug tools =======
-
-function log(value: any, signature: string = 'Mid_Result'): any {
-  console.log(signature, JSON.stringify(value))
-
-  return value
-}
-
-function logCurrying(signature: string) {
-  return (value: any) =>
-    log(value, signature)
-}
-
 export type { MixedAction }
 
 export {
-  pipeline,
   asyncPipeline,
-  pipelineCurrying,
   deepReverse,
-  log,
-  logCurrying,
 }
