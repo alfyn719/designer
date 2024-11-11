@@ -1,11 +1,11 @@
 import type { FC } from 'react'
 
 import { MinusCircleOutlined } from '@ant-design/icons'
-import { pipelineToolkit } from '@designer/tools'
-import { Button, Drawer, Form, Input, Tooltip } from 'antd'
-import { Card, type FormInstance } from 'antd'
+import { Button, Card, Drawer, Form, Input, Tooltip } from 'antd'
 import { isArray, isFunction } from 'lodash-es'
 import { useEffect, useRef, useState } from 'react'
+
+import { pipelineToolkit } from '../../../../packages/tools'
 
 const { pipeline, log } = pipelineToolkit
 

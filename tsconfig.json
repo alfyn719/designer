@@ -19,5 +19,5 @@
     "isolatedModules": true,
     "skipLibCheck": true
   },
-  "include": ["src, packages/*, designer/*"]
+  "include": ["src", "packages/*", "designer/*"]
 }

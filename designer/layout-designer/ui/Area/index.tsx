@@ -1,10 +1,6 @@
 import type { NamedAreaArr } from '../../model/create-grid-store/index.type.ts'
 import type { FC } from 'react'
 
-import cls from 'classnames'
-
-import styles from './index.module.less'
-
 interface IAreaProps {
   areas: NamedAreaArr
   colors: string[]

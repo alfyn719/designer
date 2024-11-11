@@ -1,8 +1,10 @@
 import antfu from '@antfu/eslint-config'
+import reactCompiler from 'eslint-plugin-react-compiler'
 
 export default antfu({
   formatters: true,
   react: true,
+  plugins: { reactCompiler },
   rules: {
     'no-console': 'warn',
 
@@ -19,8 +21,8 @@ export default antfu({
 
     'antfu/top-level-function': 'off',
 
-    // 'unused-imports/no-unused-imports': 'off',
-    // 'unused-imports/no-unused-vars': 'warn',
     'react-hooks/exhaustive-deps': 'off',
+
+    'reactCompiler/react-compiler': 'error',
   },
 })

@@ -1,3 +1,4 @@
 packages:
   - 'designer/*'
   - 'packages/*'
+  - 'sandbox/*'

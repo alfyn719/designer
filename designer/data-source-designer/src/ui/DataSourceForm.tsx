@@ -1,7 +1,5 @@
-import type { Structure } from '../configs/common.type'
-
 import { Form } from 'antd'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 import CommonFormItem from './CommonFormItem'
 import LocalFormItem from './LocalFormItem'

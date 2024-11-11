@@ -1,8 +1,7 @@
 import type { UnitValue } from './helper.type'
 import type { GridArea } from './index.type.ts'
 
-import { pipelineToolkit } from '@designer/tools'
-
+import { pipelineToolkit } from '../../../../packages/tools'
 import { Track } from './unit.type.ts'
 
 const { pipelineCurrying } = pipelineToolkit
@@ -176,4 +175,4 @@ const unitArea = numberedUnit
 
 const toFixed = (n: number, precision: number): number => Number(n.toFixed(precision))
 
-export { split, trackArea, unitArea, toFixed }
+export { split, toFixed, trackArea, unitArea }
