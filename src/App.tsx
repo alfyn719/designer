@@ -1,6 +1,6 @@
-import { ReactCompiler } from 'react-19'
-
 import styles from './App.module.less'
+
+import '@tools/text-processor'
 
 function App() {
   return (
@@ -8,7 +8,6 @@ function App() {
       <h1>Rsbuild with React</h1>
       <p>Start building amazing things with Rsbuild.</p>
 
-      <ReactCompiler />
     </div>
   )
 }
