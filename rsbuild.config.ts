@@ -27,4 +27,8 @@ export default defineConfig({
       version: '2022-03',
     },
   },
+
+  html: {
+    title: 'designer',
+  },
 })

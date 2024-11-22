@@ -6,8 +6,9 @@ require('esbuild').build({
   platform: 'browser',
   outfile: 'build/main.js',
   sourcemap: false,
-  format: 'esm',
-  external: ['lodash-es'],
+  format: 'iife',
+  globalName: 'modx.demo',
+  external: ['antd'],
   loader: {
     '.tsx': 'tsx',
     '.svg': 'dataurl',

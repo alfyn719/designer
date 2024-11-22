@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2023",
+    "target": "ESNext",
     "jsx": "react-jsx",
-    "lib": ["DOM", "ES2023"],
+    "lib": ["DOM", "ESNext"],
     "useDefineForClassFields": true,
 
     /* modules */

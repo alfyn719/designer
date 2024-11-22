@@ -1,4 +1,5 @@
-import build from './build.ts'
-import transform from './transform.ts'
+import EBundler from './EBundler.ts'
+import EComponent from './EComponent.ts'
+import EModules from './EModules.ts'
 
-export { build, transform }
+export { EBundler, EComponent, EModules }

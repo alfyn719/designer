@@ -1,12 +1,10 @@
-import { cloneDeep } from 'lodash-es'
+import { Button } from 'antd'
 
 const App = () => {
-  const name = cloneDeep('name')
-
   return (
     <div>
       App
-      {name}
+      <Button>Hello</Button>
     </div>
   )
 }
