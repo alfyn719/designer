@@ -72,7 +72,7 @@ class EComponent {
 
   revoke() {}
 
-  public getNameVersion() {
+  public getModuleName() {
     let { name, version } = this
 
     name = name.replaceAll('.', '_')
@@ -83,7 +83,7 @@ class EComponent {
 
   public bundle(namespace?: string) {
     const globalName = namespace
-      ? `${namespace}.${this.getNameVersion()}`
+      ? `${namespace}.${this.getModuleName()}`
       : ''
 
     return this.bundler.build(this, globalName)

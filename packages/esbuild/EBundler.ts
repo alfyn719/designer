@@ -4,6 +4,7 @@ import * as esbuild from 'esbuild-wasm'
 import { WASM_URL } from './configs'
 
 import pluginEntryPoint from './plugins/plugin-entry-point.ts'
+import pluginOnline from './plugins/plugin-online.ts'
 import pluginStyle from './plugins/plugin-style.ts'
 import pluginTsx from './plugins/plugin-tsx.ts'
 
@@ -79,11 +80,13 @@ class EBundler {
     component: EComponent,
     namespace: string,
     entrypoint: string,
+    globalName: string,
   ) {
     return [
       pluginEntryPoint(component, namespace, entrypoint),
       pluginTsx(component, namespace),
       pluginStyle(component, namespace),
+      pluginOnline(component, globalName),
     ]
   }
 
@@ -97,6 +100,7 @@ class EBundler {
       component,
       name,
       entryPoint,
+      globalName,
     )
 
     const options = this.createOptions(

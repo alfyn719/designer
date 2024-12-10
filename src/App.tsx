@@ -18,11 +18,12 @@ const testC = new EComponent({
 testC.createFile(`
   import hello from './hello.js'
   import styles from './index.module.less'
+  import AComponent from 'online::Abc:123'
 
   const App = () => {
     hello()
   
-    return <div className={styles.name}>build test</div>
+    return <div className={styles.name}>build test <AComponent /></div>
   }
   
   export default App
