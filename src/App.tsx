@@ -2,6 +2,8 @@ import { EBundler, EComponent, EModules } from '@tools/esbuild'
 
 import styles from './App.module.less'
 
+import '@tools/entry-editor'
+
 const eModules = new EModules(window, 'mimeTest')
 
 console.log('xxx', eModules)

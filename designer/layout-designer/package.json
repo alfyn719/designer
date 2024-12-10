@@ -13,7 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
-    "@designer/tools": "workspace:packages",
+    "@tools/utils": "workspace:packages",
     "@use-gesture/react": "^10.3.1",
     "antd": "^5.19.3",
     "classnames": "^2.5.1",

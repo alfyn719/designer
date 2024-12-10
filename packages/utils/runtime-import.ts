@@ -20,3 +20,5 @@ const toComponent = (objectURL: string) =>
       `return import("${objectURL}")`,
     ) as () => Promise<{ default: ComponentType<any> }>,
   )
+
+export { toComponent, toObjectURL }
