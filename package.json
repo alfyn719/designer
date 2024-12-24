@@ -9,38 +9,41 @@
     "build": "rsbuild build",
     "preview": "rsbuild preview",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "delete:node_modules": "bash ./tools/delete-node_modules-recursive.sh"
   },
   "dependencies": {
-    "react": "19.0.0-rc-603e6108-20241029",
-    "react-dom": "19.0.0-rc-603e6108-20241029"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.8.0",
-    "@eslint-react/eslint-plugin": "^1.15.2",
-    "@rsbuild/core": "^1.0.19",
+    "@antfu/eslint-config": "^3.12.1",
+    "@eslint-react/eslint-plugin": "^1.22.1",
+    "@rsbuild/core": "^1.1.12",
     "@rsbuild/plugin-babel": "^1.0.3",
     "@rsbuild/plugin-less": "^1.1.0",
-    "@rsbuild/plugin-react": "^1.0.6",
+    "@rsbuild/plugin-react": "^1.1.0",
     "@tools/esbuild": "workspace:packages",
     "@tools/html-resource-editor": "workspace:packages",
     "@tools/lessc": "workspace:packages",
     "@tools/pipeline": "workspace:packages",
     "@tools/text-processor": "workspace:packages",
     "@tools/utils": "workspace:packages",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "babel-plugin-react-compiler": "19.0.0-beta-a7bf2bd-20241110",
-    "eslint": "^9.13.0",
-    "eslint-plugin-format": "^0.1.2",
-    "eslint-plugin-react-compiler": "19.0.0-beta-a7bf2bd-20241110",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.4.14",
-    "typescript": "^5.6.3"
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "babel-plugin-react-compiler": "19.0.0-beta-b2e8e9c-20241220",
+    "eslint": "^9.17.0",
+    "eslint-plugin-format": "^0.1.3",
+    "eslint-plugin-react-compiler": "19.0.0-beta-b2e8e9c-20241220",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "typescript": "^5.7.2"
   },
   "pnpm": {
     "overrides": {
-      "eslint": "^9.13.0"
+      "eslint": "^9.17.0",
+      "react": "^19.0.0",
+      "react-dom": "^19.0.0"
     }
   }
 }

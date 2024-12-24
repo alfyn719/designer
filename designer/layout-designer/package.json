@@ -15,14 +15,14 @@
   "peerDependencies": {
     "@tools/utils": "workspace:packages",
     "@use-gesture/react": "^10.3.1",
-    "antd": "^5.19.3",
+    "antd": "^5.22.6",
     "classnames": "^2.5.1",
     "color": "^4.2.3",
     "immer": "^10.1.1",
     "react-use-measure": "^2.1.1",
-    "zustand": "^4.5.4"
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
-    "@types/color": "^3.0.6"
+    "@types/color": "^4.2.0"
   }
 }
