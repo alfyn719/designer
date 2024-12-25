@@ -1,4 +1,4 @@
-import { EBundler, EComponent, EModules } from '@tools/esbuild'
+import { EBundler, EComponent, EModules } from '@designer/esbuild-browser'
 
 import styles from './App.module.less'
 

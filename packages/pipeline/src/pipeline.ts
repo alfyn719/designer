@@ -1,8 +1,12 @@
-import type { DeepAction, MixedAction } from './actions.type'
+import type {
+  DeepAction,
+  MixedActions,
+} from './actions.type'
 
-import { isDeep } from './helper'
-
-// ======= execute action recursion =======
+import {
+  actionsMustBeAnArray,
+  isDeep,
+} from './helper'
 
 /**
  * the control for action drill
@@ -10,8 +14,11 @@ import { isDeep } from './helper'
  * @param init any
  */
 
-function drill(action: DeepAction, init: any): any {
-  const [[source, target = source], actions] = action as DeepAction
+function drill(
+  action: DeepAction,
+  init: any,
+): any {
+  const [[source, target = source], actions] = action
 
   // eslint-disable-next-line ts/no-use-before-define
   init[target] = pipeline(actions, init[source])
@@ -21,13 +28,15 @@ function drill(action: DeepAction, init: any): any {
 
 /**
  * execute action on source or source's property further
- * @param actions use the actions reversely
+ * @param actions MixedActions (use the actions reversely)
  * @param init any
  */
 
-const pipeline = function self<T>(actions: MixedAction[], init: any): T {
-  if (!Array.isArray(actions))
-    throw new TypeError('recursionAction: actions must be an array')
+const pipeline = function self<T>(
+  actions: MixedActions,
+  init: any,
+): T {
+  actionsMustBeAnArray(actions)
 
   if (actions.length === 0)
     return init
@@ -40,9 +49,9 @@ const pipeline = function self<T>(actions: MixedAction[], init: any): T {
   return action(self(restActions, init))
 }
 
-// ======= Currying =======
-
-function pipelineCurrying<T>(actions: MixedAction[]) {
+function pipelineCurrying<T>(
+  actions: MixedActions,
+) {
   return (init: any) =>
     pipeline<T>(actions, init)
 }
