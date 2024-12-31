@@ -6,7 +6,7 @@ import type {
 } from './actions.type'
 
 import {
-  actionsMustBeAnArray,
+  actionsMustBeAnArrayError,
   isContinuousDeep,
   isDeep,
 } from './helper'
@@ -86,7 +86,7 @@ const asyncPipeline = async function self<T>(
   actions: MixedActions,
   lateInit: LateInit,
 ): Promise<T> {
-  actionsMustBeAnArray(actions)
+  actionsMustBeAnArrayError(actions)
 
   const init = await lateInit
 

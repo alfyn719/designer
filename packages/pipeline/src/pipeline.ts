@@ -4,7 +4,7 @@ import type {
 } from './actions.type'
 
 import {
-  actionsMustBeAnArray,
+  actionsMustBeAnArrayError,
   isDeep,
 } from './helper'
 
@@ -36,7 +36,7 @@ const pipeline = function self<T>(
   actions: MixedActions,
   init: any,
 ): T {
-  actionsMustBeAnArray(actions)
+  actionsMustBeAnArrayError(actions)
 
   if (actions.length === 0)
     return init

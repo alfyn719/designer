@@ -1,5 +1,7 @@
 import { EBundler, EComponent, EModules } from '@designer/esbuild-browser'
 
+import FileTree from '@designer/esbuild-browser/UI/FileTree.tsx'
+
 import styles from './App.module.less'
 
 const eModules = new EModules(window, 'mimeTest')
@@ -69,6 +71,8 @@ function App() {
       <h1>Rsbuild with React</h1>
       <p>Start building amazing things with Rsbuild.</p>
       <span>change</span>
+
+      <FileTree />
     </div>
   )
 }

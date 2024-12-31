@@ -24,6 +24,8 @@ import {
   pipelineCurrying,
 } from './src/pipeline'
 
+// ======= / =======
+
 export default pipeline
 
 export {

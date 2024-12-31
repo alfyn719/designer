@@ -13,6 +13,17 @@ interface IEComponent {
   DEV?: boolean
 }
 
+/**
+ * 以组件为单位进行保存，所以需要：
+ * 1. 媒体文件的保存，上传到 oss，文本内容替换为 oss 地址；
+ * 2. 文本文件的保存，以 json 字符串的形式保存；
+ */
+
+/**
+ * 关于媒体文件的引用方式：点击保存时上传到 oss 并进行资源替换；
+ * 媒体资源编辑工具；
+ */
+
 class EComponent {
   DEV: boolean = false
 

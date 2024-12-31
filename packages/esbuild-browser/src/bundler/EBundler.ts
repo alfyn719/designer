@@ -16,38 +16,33 @@ interface IProps {
 class EBundler {
   static initialized: boolean = false
 
-  private readonly wasmURL: string
-
   DEV: boolean = false
 
   constructor(props: IProps) {
-    const {
-      wasmURL = WASM_URL,
-      DEV = false,
-    } = props
+    const { wasmURL, DEV = false } = props
 
-    this.wasmURL = wasmURL
+    this.init(wasmURL)
     this.DEV = DEV
   }
 
-  private launcher() {
-    return esbuild.initialize(
-      {
-        wasmURL: this.wasmURL,
-        worker: true,
-      },
-    )
+  private async launcher(wasmURL = WASM_URL) {
+    await esbuild
+      .initialize(
+        {
+          wasmURL,
+          worker: true,
+        },
+      )
+
+    EBundler.initialized = true
   }
 
-  private async init() {
+  public init(wasmURL?: string) {
     if (EBundler.initialized)
       return
 
-    await this.launcher()
-
-    EBundler.initialized = true
-
-    console.log('EBuild is initialized')
+    this.launcher(wasmURL)
+      .then(res => console.log('EBuild initialized', res))
   }
 
   createOptions(
@@ -95,12 +90,10 @@ class EBundler {
     ]
   }
 
-  async build(
+  build(
     component: EComponent,
     globalName: string,
   ) {
-    await this.init()
-
     const { name, entryPoint } = component
 
     const plugins = this.createPlugins(

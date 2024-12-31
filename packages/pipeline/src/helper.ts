@@ -14,7 +14,7 @@ function isDeep(
   }
 }
 
-function actionsMustBeAnArray(
+function actionsMustBeAnArrayError(
   actions: MixedActions,
 ) {
   if (Array.isArray(actions))
@@ -71,7 +71,7 @@ const deepReverse = function self(
 }
 
 export {
-  actionsMustBeAnArray,
+  actionsMustBeAnArrayError,
   isContinuousDeep,
   isDeep,
 }
