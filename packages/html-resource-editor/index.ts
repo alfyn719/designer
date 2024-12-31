@@ -1,4 +1,4 @@
-import { asyncPipeline } from '@tools/pipeline'
+import { asyncPipeline } from '@designer/pipeline'
 import { pathBox } from '@tools/utils'
 import * as cheerio from 'cheerio'
 import { resolve } from 'uri-js'
