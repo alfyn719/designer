@@ -1,12 +1,38 @@
 {
   "name": "@designer/pipeline",
+  "type": "module",
   "version": "1.0.1",
-  "description": "",
+  "private": false,
   "author": "alfyn719 <zyk1191894890@gmail.com> (https://github.com/alfyn719)",
   "license": "ISC",
-  "keywords": [],
-  "main": "index.ts",
+  "homepage": "https://github.com/alfyn719/designer/tree/master/packages/pipeline",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfyn719/designer.git#master"
+  },
+  "keywords": [
+    "Functional programming",
+    "pipeline"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    }
+  },
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^6.0.6",
+    "vite-plugin-dts": "^4.4.0"
   }
 }

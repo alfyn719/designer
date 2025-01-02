@@ -1,4 +1,9 @@
-import type { Action, DeepAction, MixedAction, MixedActions } from './actions.type'
+import type {
+  Action,
+  DeepAction,
+  MixedAction,
+  MixedActions,
+} from './actions.type'
 
 // 1st library, just sniff mode
 

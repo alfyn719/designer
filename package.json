@@ -2,7 +2,7 @@
   "name": "rsbuild-project",
   "type": "module",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b",
   "scripts": {
     "dev": "rsbuild dev --open",
@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "delete:node_modules": "bash ./tools/delete-node_modules-recursive.sh",
-    "test": "jest"
+    "test": "jest --projects packages/pipeline"
   },
   "dependencies": {
     "react": "^19.0.0",

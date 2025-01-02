@@ -6,31 +6,30 @@ import type {
   MixedActions,
   Source,
   Target,
-} from './src/actions.type'
+} from './actions.type'
 
 import {
   asyncPipeline,
   asyncPipelineCurrying,
-} from './src/asyncPipeline.ts'
+} from './asyncPipeline'
 
 import {
   deepReverse,
   log,
   logCurrying,
-} from './src/helper.ts'
+} from './helper'
 
 import {
   pipeline,
   pipelineCurrying,
-} from './src/pipeline'
+} from './pipeline'
 
 // ======= / =======
-
-export default pipeline
 
 export {
   asyncPipeline,
   asyncPipelineCurrying,
+  pipeline,
   pipelineCurrying,
 }
 
