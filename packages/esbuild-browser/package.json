@@ -1,5 +1,5 @@
 {
-  "name": "@designer/esbuild-browser",
+  "name": "@alfyn/esbuild-browser",
   "version": "1.0.0",
   "description": "",
   "author": "alfyn719 <zyk1191894890@gmail.com> (https://github.com/alfyn719)",
@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
-    "@tools/lessc": "workspace:packages",
+    "@alfyn/lessc": "workspace:packages",
     "esbuild-wasm": "^0.24.2"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@designer/layout-designer",
+  "name": "@alfyn/layout-designer",
   "version": "1.0.0",
   "description": "create a layout scaffold",
   "author": "alfyn719 <zyk1191894890@gmail.com> (https://github.com/alfyn719)",
@@ -13,7 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
-    "@tools/utils": "workspace:packages",
+    "@alfyn/utils": "workspace:packages",
     "@use-gesture/react": "^10.3.1",
     "antd": "^5.22.6",
     "classnames": "^2.5.1",

@@ -20,15 +20,27 @@ importers:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
     devDependencies:
+      '@alfyn/esbuild-browser':
+        specifier: workspace:packages
+        version: link:packages/esbuild-browser
+      '@alfyn/html-resource-editor':
+        specifier: workspace:packages
+        version: link:packages/html-resource-editor
+      '@alfyn/lessc':
+        specifier: workspace:packages
+        version: link:packages/lessc
+      '@alfyn/pipeline':
+        specifier: workspace:packages
+        version: link:packages/pipeline
+      '@alfyn/text-processor':
+        specifier: workspace:packages
+        version: link:packages/text-processor
+      '@alfyn/utils':
+        specifier: workspace:packages
+        version: link:packages/utils
       '@antfu/eslint-config':
         specifier: ^3.12.1
         version: 3.12.1(@eslint-react/eslint-plugin@1.22.1(eslint@9.17.0)(typescript@5.7.2))(@typescript-eslint/utils@8.18.2(eslint@9.17.0)(typescript@5.7.2))(@vue/compiler-sfc@3.5.12)(eslint-plugin-format@0.1.3(eslint@9.17.0))(eslint-plugin-react-hooks@5.1.0(eslint@9.17.0))(eslint-plugin-react-refresh@0.4.16(eslint@9.17.0))(eslint@9.17.0)(typescript@5.7.2)
-      '@designer/esbuild-browser':
-        specifier: workspace:packages
-        version: link:packages/esbuild-browser
-      '@designer/pipeline':
-        specifier: workspace:packages
-        version: link:packages/pipeline
       '@eslint-react/eslint-plugin':
         specifier: ^1.22.1
         version: 1.22.1(eslint@9.17.0)(typescript@5.7.2)
@@ -44,18 +56,6 @@ importers:
       '@rsbuild/plugin-react':
         specifier: ^1.1.0
         version: 1.1.0(@rsbuild/core@1.1.12)
-      '@tools/html-resource-editor':
-        specifier: workspace:packages
-        version: link:packages/html-resource-editor
-      '@tools/lessc':
-        specifier: workspace:packages
-        version: link:packages/lessc
-      '@tools/text-processor':
-        specifier: workspace:packages
-        version: link:packages/text-processor
-      '@tools/utils':
-        specifier: workspace:packages
-        version: link:packages/utils
       '@types/jest':
         specifier: ^29.5.14
         version: 29.5.14
@@ -104,12 +104,12 @@ importers:
 
   designer/data-source-designer:
     dependencies:
+      '@alfyn/utils':
+        specifier: workspace:packages
+        version: link:../../packages/utils
       '@ant-design/icons':
         specifier: ^5.5.2
         version: 5.5.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@tools/utils':
-        specifier: workspace:packages
-        version: link:../../packages/utils
       antd:
         specifier: ^5.22.6
         version: 5.22.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -129,7 +129,7 @@ importers:
 
   designer/layout-designer:
     dependencies:
-      '@tools/utils':
+      '@alfyn/utils':
         specifier: workspace:packages
         version: link:../../packages/utils
       '@use-gesture/react':
@@ -171,7 +171,7 @@ importers:
 
   packages/esbuild-browser:
     dependencies:
-      '@tools/lessc':
+      '@alfyn/lessc':
         specifier: workspace:packages
         version: link:../lessc
       esbuild-wasm:
@@ -180,10 +180,10 @@ importers:
 
   packages/html-resource-editor:
     dependencies:
-      '@designer/pipeline':
+      '@alfyn/pipeline':
         specifier: workspace:packages
         version: link:../pipeline
-      '@tools/utils':
+      '@alfyn/utils':
         specifier: workspace:packages
         version: link:../utils
       cheerio:
@@ -214,7 +214,7 @@ importers:
 
   packages/text-processor:
     dependencies:
-      '@designer/pipeline':
+      '@alfyn/pipeline':
         specifier: workspace:packages
         version: link:../pipeline
       acorn:
@@ -2841,9 +2841,6 @@ packages:
   lru-cache@6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
-
-  magic-string@0.30.12:
-    resolution: {integrity: sha512-Ea8I3sQMVXr8JhN4z+H/d8zwo+tYDgHE9+5G4Wnrwhs0gaK9fXTKx0Tw5Xwsd/bCPTTZNRAdpyzvoeORe9LYpw==}
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
@@ -5636,7 +5633,7 @@ snapshots:
       '@vue/compiler-ssr': 3.5.12
       '@vue/shared': 3.5.12
       estree-walker: 2.0.2
-      magic-string: 0.30.12
+      magic-string: 0.30.17
       postcss: 8.4.49
       source-map-js: 1.2.1
 
@@ -7348,10 +7345,6 @@ snapshots:
   lru-cache@6.0.0:
     dependencies:
       yallist: 4.0.0
-
-  magic-string@0.30.12:
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.0
 
   magic-string@0.30.17:
     dependencies:

@@ -1,7 +1,7 @@
 {
-  "name": "@designer/pipeline",
+  "name": "@alfyn/pipeline",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "author": "alfyn719 <zyk1191894890@gmail.com> (https://github.com/alfyn719)",
   "license": "ISC",
@@ -34,5 +34,9 @@
   "devDependencies": {
     "vite": "^6.0.6",
     "vite-plugin-dts": "^4.4.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

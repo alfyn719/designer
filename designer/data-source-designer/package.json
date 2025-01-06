@@ -1,5 +1,5 @@
 {
-  "name": "@designer/data-source-designer",
+  "name": "@alfyn/data-source-designer",
   "version": "1.0.0",
   "description": "create a data source",
   "author": "alfyn719 <zyk1191894890@gmail.com> (https://github.com/alfyn719)",
@@ -13,8 +13,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
+    "@alfyn/utils": "workspace:packages",
     "@ant-design/icons": "^5.5.2",
-    "@tools/utils": "workspace:packages",
     "antd": "^5.22.6",
     "lodash-es": "^4.17.21",
     "react": "^19.0.0",

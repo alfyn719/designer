@@ -1,5 +1,5 @@
 {
-  "name": "@tools/text-processor",
+  "name": "@alfyn/text-processor",
   "version": "1.0.0",
   "description": "",
   "author": "alfyn719 <zyk1191894890@gmail.com> (https://github.com/alfyn719)",
@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
-    "@designer/pipeline": "workspace:packages",
+    "@alfyn/pipeline": "workspace:packages",
     "acorn": "^8.14.0",
     "escodegen": "^2.1.0",
     "estraverse": "^5.3.0"

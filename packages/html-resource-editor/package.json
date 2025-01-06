@@ -1,5 +1,5 @@
 {
-  "name": "@tools/html-resource-editor",
+  "name": "@alfyn/html-resource-editor",
   "version": "1.0.0",
   "description": "",
   "author": "alfyn719 <zyk1191894890@gmail.com> (https://github.com/alfyn719)",
@@ -10,8 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
-    "@designer/pipeline": "workspace:packages",
-    "@tools/utils": "workspace:packages",
+    "@alfyn/pipeline": "workspace:packages",
+    "@alfyn/utils": "workspace:packages",
     "cheerio": "^1.0.0",
     "uri-js": "^4.4.1"
   }
