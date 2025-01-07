@@ -1,12 +1,6 @@
-import type {
-  DeepAction,
-  MixedActions,
-} from './actions.type'
+import type { DeepAction, MixedActions } from './actions.type'
 
-import {
-  actionsMustBeAnArrayError,
-  isDeep,
-} from './helper'
+import { actionsMustBeAnArrayError, isDeep } from './helper'
 
 /**
  * the control for action drill

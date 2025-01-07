@@ -1,4 +1,4 @@
-import { pipeline } from '@tools/pipeline'
+import { pipeline } from '@alfyn/pipeline'
 
 import { buildScaffoldOfVariableDeclaration, buildScaffoldOfVariableDeclarator } from './builders-of-id.ts'
 import { buildIdentifier } from './builders-of-meta.ts'

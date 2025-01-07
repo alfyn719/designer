@@ -1,27 +1,46 @@
-import { resolve } from 'uri-js'
-
 const ABSOLUTE_PATH_PREFIX = [
   'http://',
   'https://',
   'ws://',
   'ws://',
+  'ftp://',
   'blob:',
 ]
+
+const isFullPath = (
+  path: string,
+) =>
+  ABSOLUTE_PATH_PREFIX.some(protocol => path.startsWith(protocol))
+
+const toFullPath = (
+  path: string,
+) =>
+  (new URL(path, location.href)).href
+
+const toFullPathOfDir = (path: string) => {
+  const _URL = new URL(path, location.href)
+
+  const { pathname } = _URL
+
+  if (!pathname.endsWith('/')) {
+    _URL.pathname = pathname
+      .split('/')
+      .toSpliced(-1, 1, '')
+      .join('/')
+  }
+
+  return _URL.href
+}
 
 const ROOT_PREFIX = '/'
 const RELATIVE_PREFIX = './'
 const NO_PREFIX = ''
 
-const isAbsolutePath = (
-  path: string,
-) =>
-  ABSOLUTE_PATH_PREFIX.some(protocol => path.startsWith(protocol))
-
 const unshiftPath = (
   fragment: string,
   path: string,
 ) => {
-  if (isAbsolutePath(path))
+  if (isFullPath(path))
     return path
 
   const prefix = path.startsWith(ROOT_PREFIX)
@@ -33,37 +52,27 @@ const unshiftPath = (
   return path.replace(prefix, `${prefix}${fragment}/`)
 }
 
-const fileTextToPath = (
+const toBlobOfFileText = (
   name: string,
   type: string,
   raw: string,
 ) =>
   URL.createObjectURL(new File([raw], name, { type }))
 
-const fileTextToPathCurrying = (
+const toBlobOfFileTextCurrying = (
   name: string,
   type: string,
 ) =>
   (
     raw: string,
   ) =>
-    fileTextToPath(name, type, raw)
-
-const toFullPath = (
-  path: string,
-) => {
-  if (isAbsolutePath(path))
-    return path
-
-  const { href } = location
-
-  return resolve(href, path)
-}
+    toBlobOfFileText(name, type, raw)
 
 export {
-  fileTextToPath,
-  fileTextToPathCurrying,
-  isAbsolutePath,
+  isFullPath,
+  toBlobOfFileText,
+  toBlobOfFileTextCurrying,
   toFullPath,
+  toFullPathOfDir,
   unshiftPath,
 }

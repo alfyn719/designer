@@ -1,6 +1,6 @@
 import type { Identifier } from 'acorn'
 
-import { pipeline } from '@tools/pipeline'
+import { pipeline } from '@alfyn/pipeline'
 
 const buildIdentifier = (
   name: string,

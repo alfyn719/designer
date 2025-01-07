@@ -1,6 +1,6 @@
 import type { Plugin } from 'esbuild-wasm'
 import type EComponent from '../EComponent.ts'
-import lessc from '@tools/lessc'
+import lessc from '@alfyn/lessc'
 
 const flagPath = (
   path: string,

@@ -1,0 +1,46 @@
+{
+  "name": "@alfyn/html-editor",
+  "type": "module",
+  "version": "1.0.0",
+  "private": false,
+  "author": "alfyn719 <zyk1191894890@gmail.com> (https://github.com/alfyn719)",
+  "license": "ISC",
+  "homepage": "https://github.com/alfyn719/designer/tree/master/packages/html-editor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfyn719/designer.git#master"
+  },
+  "keywords": [],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/"
+  ],
+  "scripts": {
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "@alfyn/pipeline": "^1.0.2",
+    "cheerio": "^1.0.0"
+  },
+  "dependencies": {
+    "@alfyn/utils": "workspace:packages"
+  },
+  "devDependencies": {
+    "vite": "^6.0.6",
+    "vite-plugin-dts": "^4.4.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

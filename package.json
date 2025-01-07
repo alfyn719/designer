@@ -19,9 +19,9 @@
   },
   "devDependencies": {
     "@alfyn/esbuild-browser": "workspace:packages",
-    "@alfyn/html-resource-editor": "workspace:packages",
+    "@alfyn/html-editor": "workspace:packages",
     "@alfyn/lessc": "workspace:packages",
-    "@alfyn/pipeline": "workspace:packages",
+    "@alfyn/pipeline": "^1.0.2",
     "@alfyn/text-processor": "workspace:packages",
     "@alfyn/utils": "workspace:packages",
     "@antfu/eslint-config": "^3.12.1",

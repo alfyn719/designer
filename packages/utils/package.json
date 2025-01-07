@@ -8,8 +8,5 @@
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "peerDependencies": {
-    "uri-js": "^4.4.1"
   }
 }

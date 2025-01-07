@@ -8,10 +8,7 @@ import type {
   Target,
 } from './actions.type'
 
-import {
-  asyncPipeline,
-  asyncPipelineCurrying,
-} from './asyncPipeline'
+import { asyncPipeline, asyncPipelineCurrying } from './asyncPipeline'
 
 import {
   deepReverse,
@@ -19,10 +16,7 @@ import {
   logCurrying,
 } from './helper'
 
-import {
-  pipeline,
-  pipelineCurrying,
-} from './pipeline'
+import { pipeline, pipelineCurrying } from './pipeline'
 
 // ======= / =======
 

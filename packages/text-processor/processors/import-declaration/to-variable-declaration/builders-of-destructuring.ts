@@ -1,4 +1,4 @@
-import { pipeline } from '@tools/pipeline'
+import { pipeline } from '@alfyn/pipeline'
 
 import {
   buildIdOfObjectPattern,
