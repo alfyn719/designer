@@ -36,8 +36,8 @@ importers:
         specifier: workspace:packages
         version: link:packages/text-processor
       '@alfyn/utils':
-        specifier: workspace:packages
-        version: link:packages/utils
+        specifier: ^0.0.1
+        version: 0.0.1(react@19.0.0)
       '@antfu/eslint-config':
         specifier: ^3.12.1
         version: 3.12.1(@eslint-react/eslint-plugin@1.22.1(eslint@9.17.0)(typescript@5.7.2))(@typescript-eslint/utils@8.18.2(eslint@9.17.0)(typescript@5.7.2))(@vue/compiler-sfc@3.5.12)(eslint-plugin-format@0.1.3(eslint@9.17.0))(eslint-plugin-react-hooks@5.1.0(eslint@9.17.0))(eslint-plugin-react-refresh@0.4.16(eslint@9.17.0))(eslint@9.17.0)(typescript@5.7.2)
@@ -105,8 +105,8 @@ importers:
   designer/data-source-designer:
     dependencies:
       '@alfyn/utils':
-        specifier: workspace:packages
-        version: link:../../packages/utils
+        specifier: ^0.0.1
+        version: 0.0.1(react@19.0.0)
       '@ant-design/icons':
         specifier: ^5.5.2
         version: 5.5.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -130,8 +130,8 @@ importers:
   designer/layout-designer:
     dependencies:
       '@alfyn/utils':
-        specifier: workspace:packages
-        version: link:../../packages/utils
+        specifier: ^0.0.1
+        version: 0.0.1(react@19.0.0)
       '@use-gesture/react':
         specifier: ^10.3.1
         version: 10.3.1(react@19.0.0)
@@ -168,6 +168,33 @@ importers:
         version: 0.52.2
 
   designer/scheduler: {}
+
+  packages/browser-bundler:
+    devDependencies:
+      vite:
+        specifier: ^6.0.6
+        version: 6.0.6(@types/node@22.10.2)(less@4.2.1)(yaml@2.6.0)
+      vite-plugin-dts:
+        specifier: ^4.4.0
+        version: 4.4.0(@types/node@22.10.2)(rollup@4.29.1)(typescript@5.7.2)(vite@6.0.6(@types/node@22.10.2)(less@4.2.1)(yaml@2.6.0))
+
+  packages/browser-file-system:
+    devDependencies:
+      vite:
+        specifier: ^6.0.6
+        version: 6.0.6(@types/node@22.10.2)(less@4.2.1)(yaml@2.6.0)
+      vite-plugin-dts:
+        specifier: ^4.4.0
+        version: 4.4.0(@types/node@22.10.2)(rollup@4.29.1)(typescript@5.7.2)(vite@6.0.6(@types/node@22.10.2)(less@4.2.1)(yaml@2.6.0))
+
+  packages/browser-module-system:
+    devDependencies:
+      vite:
+        specifier: ^6.0.6
+        version: 6.0.6(@types/node@22.10.2)(less@4.2.1)(yaml@2.6.0)
+      vite-plugin-dts:
+        specifier: ^4.4.0
+        version: 4.4.0(@types/node@22.10.2)(rollup@4.29.1)(typescript@5.7.2)(vite@6.0.6(@types/node@22.10.2)(less@4.2.1)(yaml@2.6.0))
 
   packages/esbuild-browser:
     dependencies:

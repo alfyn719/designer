@@ -1,0 +1,22 @@
+{
+  "name": "@alfyn/browser-module-system",
+  "type": "module",
+  "version": "1.0.0",
+  "private": false,
+  "author": "alfyn719 <zyk1191894890@gmail.com> (https://github.com/alfyn719)",
+  "license": "ISC",
+  "homepage": "https://github.com/alfyn719/designer/tree/master/packages/browser-module-system",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfyn719/designer.git#master"
+  },
+  "keywords": [],
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "vite": "^6.0.6",
+    "vite-plugin-dts": "^4.4.0"
+  }
+}
