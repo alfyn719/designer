@@ -52,26 +52,26 @@ const unshiftPath = (
   return path.replace(prefix, `${prefix}${fragment}/`)
 }
 
-const toBlobOfFileText = (
-  name: string,
-  type: string,
-  raw: string,
+const toFileObjectURL = (
+  ctx: string,
+  name: string = 'anonymous',
+  type?: string,
 ) =>
-  URL.createObjectURL(new File([raw], name, { type }))
+  URL.createObjectURL(new File([ctx], name, { type }))
 
-const toBlobOfFileTextCurrying = (
+const toFileObjectURLCurrying = (
   name: string,
-  type: string,
+  type?: string,
 ) =>
   (
-    raw: string,
+    ctx: string,
   ) =>
-    toBlobOfFileText(name, type, raw)
+    toFileObjectURL(ctx, name, type)
 
 export {
   isFullPath,
-  toBlobOfFileText,
-  toBlobOfFileTextCurrying,
+  toFileObjectURL,
+  toFileObjectURLCurrying,
   toFullPath,
   toFullPathOfDir,
   unshiftPath,

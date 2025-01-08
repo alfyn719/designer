@@ -1,12 +1,42 @@
 {
   "name": "@alfyn/utils",
-  "version": "1.0.0",
-  "description": "",
+  "type": "module",
+  "version": "0.0.1",
+  "private": false,
   "author": "alfyn719 <zyk1191894890@gmail.com> (https://github.com/alfyn719)",
   "license": "ISC",
+  "homepage": "https://github.com/alfyn719/designer/tree/master/packages/utils",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfyn719/designer.git#master"
+  },
   "keywords": [],
-  "main": "index.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.6",
+    "vite-plugin-dts": "^4.4.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

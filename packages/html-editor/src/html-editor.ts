@@ -12,7 +12,7 @@ import { fetchFileText } from './helper.ts'
 
 const { mustBeAStringError } = errorBox
 
-const { toBlobOfFileTextCurrying, toFullPath } = pathBox
+const { toFileObjectURLCurrying, toFullPath } = pathBox
 
 const editHtml = async (
   executors: Array<AsyncExecutor | Executor>,
@@ -43,7 +43,7 @@ const editHtmlWithPath = async (
 
   return asyncPipeline<ObjectURL>(
     [
-      toBlobOfFileTextCurrying('index.html', 'text/html'),
+      toFileObjectURLCurrying('index.html', 'text/html'),
       editHtmlCurrying(executors),
       fetchFileText,
       toFullPath,

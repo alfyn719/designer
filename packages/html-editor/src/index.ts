@@ -17,10 +17,7 @@ export type {
   ObjectURL,
 }
 
-export {
-  executorPrefixResource,
-  executorPublicPath,
-}
+export { executorPrefixResource, executorPublicPath }
 
 export { fetchFileText }
 

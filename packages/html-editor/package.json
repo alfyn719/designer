@@ -1,7 +1,7 @@
 {
   "name": "@alfyn/html-editor",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": false,
   "author": "alfyn719 <zyk1191894890@gmail.com> (https://github.com/alfyn719)",
   "license": "ISC",
@@ -30,10 +30,8 @@
   },
   "peerDependencies": {
     "@alfyn/pipeline": "^1.0.2",
+    "@alfyn/utils": "^0.0.1",
     "cheerio": "^1.0.0"
-  },
-  "dependencies": {
-    "@alfyn/utils": "workspace:packages"
   },
   "devDependencies": {
     "vite": "^6.0.6",

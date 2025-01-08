@@ -2,27 +2,7 @@ import { EBundler, EComponent, EModules } from '@alfyn/esbuild-browser'
 
 import FileTree from '@alfyn/esbuild-browser/UI/FileTree.tsx'
 
-import {
-  editHtmlWithPath,
-  executorPrefixResource,
-  executorPublicPath,
-} from '@alfyn/html-editor'
-
 import styles from './App.module.less'
-
-// =======
-
-window.editHtmlWithPath = editHtmlWithPath
-
-editHtmlWithPath(
-  [
-    executorPublicPath.bind(null, 'http://10.0.77.31:15351/userCenterMicro/xxx'),
-    executorPrefixResource.bind(null, 'OH_MY_GOD'),
-  ],
-  'http://10.0.77.31:15351/userCenterMicro/xxx',
-)
-
-// =======
 
 const eModules = new EModules(window, 'mimeTest')
 

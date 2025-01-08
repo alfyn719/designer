@@ -184,8 +184,8 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2
       '@alfyn/utils':
-        specifier: workspace:packages
-        version: link:../utils
+        specifier: ^0.0.1
+        version: 0.0.1(react@19.0.0)
       cheerio:
         specifier: ^1.0.0
         version: 1.0.0
@@ -238,12 +238,28 @@ importers:
         specifier: ^5.1.7
         version: 5.1.7
 
-  packages/utils: {}
+  packages/utils:
+    dependencies:
+      react:
+        specifier: ^19.0.0
+        version: 19.0.0
+    devDependencies:
+      vite:
+        specifier: ^6.0.6
+        version: 6.0.6(@types/node@22.10.2)(less@4.2.1)(yaml@2.6.0)
+      vite-plugin-dts:
+        specifier: ^4.4.0
+        version: 4.4.0(@types/node@22.10.2)(rollup@4.29.1)(typescript@5.7.2)(vite@6.0.6(@types/node@22.10.2)(less@4.2.1)(yaml@2.6.0))
 
 packages:
 
   '@alfyn/pipeline@1.0.2':
     resolution: {integrity: sha512-V1XLswasLJJXE/Fhk1JTteAtwxoRUXc3VRpYn1KbZycI90X4GSZ8VNlRm1wL4948OCvlVYIuYNv45PLf38GLLA==}
+
+  '@alfyn/utils@0.0.1':
+    resolution: {integrity: sha512-Nw8aFM+gKCYO87oqKV9hd3Ctst6BhhMQ4fhBTQHVaa0VeUp6oJxJ3kTBtD06NJK+Mj0PXNhLUj8Em/zA1UW8UA==}
+    peerDependencies:
+      react: ^19.0.0
 
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
@@ -4080,6 +4096,10 @@ packages:
 snapshots:
 
   '@alfyn/pipeline@1.0.2': {}
+
+  '@alfyn/utils@0.0.1(react@19.0.0)':
+    dependencies:
+      react: 19.0.0
 
   '@ampproject/remapping@2.3.0':
     dependencies:

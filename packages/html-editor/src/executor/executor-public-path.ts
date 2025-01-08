@@ -9,9 +9,10 @@ const executorPublicPath = (
   $html: CheerioAPI,
 ) => {
   const resolve = 'window.publicPath'
+  const publicPath = `"${toFullPathOfDir(entry)}"`
   const script = `
     <script>
-      ${resolve} = ${toFullPathOfDir(entry)}
+      ${resolve} = ${publicPath}
     </script>
   `
 
