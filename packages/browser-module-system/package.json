@@ -11,9 +11,25 @@
     "url": "git+https://github.com/alfyn719/designer.git#master"
   },
   "keywords": [],
-  "main": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "pack": "pnpm build & npm pack",
+    "publish": "pnpm build & npm publish"
   },
   "devDependencies": {
     "vite": "^6.0.6",
