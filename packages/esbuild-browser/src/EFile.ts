@@ -109,7 +109,8 @@ const pickTheExtension = (
 }
 
 const extensionToMimetype = (
-  extension: string) =>
+  extension: string,
+) =>
   EXTENSION_MIMETYPE_MAP[extension]
 
 class EFile {

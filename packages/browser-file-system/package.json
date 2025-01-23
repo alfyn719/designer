@@ -31,6 +31,9 @@
     "pack": "pnpm build & npm pack",
     "publish": "pnpm build & npm publish"
   },
+  "peerDependencies": {
+    "@alfyn/utils": "^0.0.1"
+  },
   "devDependencies": {
     "vite": "^6.0.6",
     "vite-plugin-dts": "^4.4.0"

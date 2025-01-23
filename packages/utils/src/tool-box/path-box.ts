@@ -17,6 +17,7 @@ const toFullPath = (
 ) =>
   (new URL(path, location.href)).href
 
+// TODO change function name to dir by full path
 const toFullPathOfDir = (path: string) => {
   const _URL = new URL(path, location.href)
 
