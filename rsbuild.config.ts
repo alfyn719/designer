@@ -31,4 +31,8 @@ export default defineConfig({
   html: {
     title: 'designer',
   },
+
+  output: {
+    minify: false,
+  },
 })

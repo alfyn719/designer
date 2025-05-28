@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>验证 import map 能在线修改</title>
+    <script type="importmap">
+        {
+            "imports": {
+                "lodash-es": "https://cdn.jsdelivr.net/npm/lodash-es@4.17.21/lodash.min.js"
+            }
+        }
+    </script>
+
+    <script type="module">
+
+        let script = document.createElement("script");
+        script.type = "module";
+        script.innerHTML = `
+            import {cloneDeep} from "lodash-es"
+
+            console.log("xxx", cloneDeep({ name: 'map', age: undefined }))
+        `
+
+
+        document.head.appendChild(script);
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -11,6 +11,6 @@
   },
   "peerDependencies": {
     "@alfyn/lessc": "workspace:packages",
-    "esbuild-wasm": "^0.24.2"
+    "esbuild-wasm": "^0.25.2"
   }
 }
