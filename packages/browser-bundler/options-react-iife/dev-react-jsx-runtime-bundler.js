@@ -1,7 +1,9 @@
 import * as esbuild from 'esbuild'
-import devBase, { DEV__REACT_JSX_DEV_RUNTIME__ } from './dev-base.js'
 
-esbuild.build({
+import { DEV__REACT_JSX_DEV_RUNTIME__ } from './constanst.js'
+import devBase from './dev-base.js'
+
+esbuild.buildSync({
   ...devBase,
 
   globalName: DEV__REACT_JSX_DEV_RUNTIME__,

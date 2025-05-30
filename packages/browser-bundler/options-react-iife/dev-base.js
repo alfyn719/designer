@@ -1,6 +1,11 @@
-const DEV__REACT__ = 'DEV__REACT__'
-const DEV__REACT_DOM_CLIENT__ = 'DEV__REACT_DOM_CLIENT__'
-const DEV__REACT_JSX_DEV_RUNTIME__ = 'DEV__REACT_JSX_DEV_RUNTIME__'
+import {
+  DEV__REACT__,
+  DEV__REACT_DOM__,
+  DEV__REACT_DOM_CLIENT__,
+  DEV__REACT_JSX_DEV_RUNTIME__,
+
+  DEV__SCHEDULER__,
+} from './constanst.js'
 
 const devBase = {
   bundle: true,
@@ -13,8 +18,11 @@ const devBase = {
 
   alias: {
     'react': DEV__REACT__,
+    'react-dom': DEV__REACT_DOM__,
     'react-dom/client': DEV__REACT_DOM_CLIENT__,
     'react/jsx-dev-runtime': DEV__REACT_JSX_DEV_RUNTIME__,
+
+    'scheduler': DEV__SCHEDULER__,
   },
 
   tsconfigRaw: `{
@@ -26,9 +34,3 @@ const devBase = {
 }
 
 export default devBase
-
-export {
-  DEV__REACT__,
-  DEV__REACT_DOM_CLIENT__,
-  DEV__REACT_JSX_DEV_RUNTIME__,
-}

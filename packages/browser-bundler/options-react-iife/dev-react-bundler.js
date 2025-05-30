@@ -1,5 +1,7 @@
 import * as esbuild from 'esbuild'
-import devBase, { DEV__REACT__ } from './dev-base.js'
+
+import { DEV__REACT__ } from './constanst.js'
+import devBase from './dev-base.js'
 
 esbuild.buildSync({
   ...devBase,

@@ -1,11 +1,17 @@
-const PROD__REACT__ = 'PROD__REACT__'
-const PROD__REACT_DOM_CLIENT__ = 'PROD__REACT_DOM_CLIENT__'
-const PROD__REACT_JSX_DEV_RUNTIME__ = 'PROD__REACT_JSX_DEV_RUNTIME__'
+import {
+  PROD__REACT__,
+  PROD__REACT_DOM__,
+  PROD__REACT_DOM_CLIENT__,
+  PROD__REACT_JSX_RUNTIME__,
+
+  PROD__SCHEDULER__,
+} from './constanst.js'
 
 const prodBase = {
   bundle: true,
-  minify: false,
+  minify: true,
   format: 'iife',
+  treeShaking: true,
   platform: 'browser',
   packages: 'external',
 
@@ -13,8 +19,11 @@ const prodBase = {
 
   alias: {
     'react': PROD__REACT__,
+    'react-dom': PROD__REACT_DOM__,
     'react-dom/client': PROD__REACT_DOM_CLIENT__,
-    'react/jsx-dev-runtime': PROD__REACT_JSX_DEV_RUNTIME__,
+    'react/jsx-dev-runtime': PROD__REACT_JSX_RUNTIME__,
+
+    'scheduler': PROD__SCHEDULER__,
   },
 
   tsconfigRaw: `{
@@ -26,9 +35,3 @@ const prodBase = {
 }
 
 export default prodBase
-
-export {
-  PROD__REACT__,
-  PROD__REACT_DOM_CLIENT__,
-  PROD__REACT_JSX_DEV_RUNTIME__,
-}
