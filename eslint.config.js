@@ -8,8 +8,6 @@ export default antfu({
   rules: {
     'no-console': 'warn',
 
-    'antfu/top-level-function': 'off',
-
     'react-hooks/exhaustive-deps': 'off',
 
     'reactCompiler/react-compiler': 'error',

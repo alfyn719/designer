@@ -1,8 +1,4 @@
-import log from '@alfyn/browser-bundler/dev'
-
-const App = () => {
-  log()
-
+function App() {
   return (
     <>
       <div>APP</div>
